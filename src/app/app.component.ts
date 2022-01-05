@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { Product } from './core/models/product.model';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'tienda-angular';
+  items = ['camisa', 'pantalon', 'zapatos'];
+
+  addItem(){
+    this.items.push("Nuevo item");
+
+  }
+  deleteItem (index:number){
+    this.items.splice(index, 1);
+  }
 }
