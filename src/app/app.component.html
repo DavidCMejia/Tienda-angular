@@ -4,7 +4,7 @@
 <input type="text" [(ngModel)]="title">
 {{title}}
 
-<app-product></app-product> <!-- se llama el product component en una sola linea ahorrando espacio y mas estetico-->
+
 
 <div *ngIf ="title === 'david'">
 Mostrar
@@ -20,3 +20,7 @@ Mostrar
 </li>
 
 </ul>
+
+<div *ngFor="let product of products">
+<app-product [product]="product"></app-product> <!-- se llama el product component en una sola linea ahorrando espacio y mas estetico-->
+</div>
