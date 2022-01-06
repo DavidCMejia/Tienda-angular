@@ -1,1 +1,24 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+  margin: 0px;
+  padding:0px;
+}
+.product-grid{
+  display:grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 50px 20px;
+  margin: 0px 20px 0px 20px; /* up right down left*/
+}
+
+.crop-image {
+  display: block;
+  height: 300px;
+  width: 100%;
+}
+
+.crop-image > img {
+  object-fit: contain;
+  height: 100%;
+  width: 100%;
+  object-position: center;
+}
