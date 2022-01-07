@@ -14,6 +14,7 @@ import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { RouterModule } from '@angular/router';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { RouterModule } from '@angular/router';
     DemoComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent
+    BannerComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,
