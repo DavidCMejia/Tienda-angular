@@ -1,29 +1,5 @@
-<!--<script> -->
- <!-- var valor = document.getElementById("texto").value; -->
-<!-- </script> -->
-<input type="text" [(ngModel)]="title">
-{{title}}
+<router-outlet></router-outlet> <!-- hace que el ROUTING home, etc funcione, se llama/invoca-->
 
 
 
-<div *ngIf ="title === 'david'">
-Mostrar
-</div>
 
-<button (click)="addItem()">Add Item </button>
-
-<ul>
-  <li *ngIf="items.length===0">La lista esta vacia</li>
-<li *ngFor="let prenda of items; index as i">
-  {{ prenda }}
-  <button (click)="deleteItem(i)">Delete</button>
-</li>
-
-</ul>
-
-<div class="product-grid">
-<app-product
-*ngFor="let product of products"
-[product]="product"></app-product> <!-- se llama el product component en una sola linea ahorrando espacio y mas estetico-->
-</div>
-<!--(productClicked)="clickProduct($event)"-->
