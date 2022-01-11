@@ -1,0 +1,16 @@
+:host {
+  border: 1px solid #333;
+  border-radius: 10px;
+  display: block;
+  padding: 10px;
+}
+
+img {
+  max-width: 100%;
+}
+.product-img {
+  height: 240px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

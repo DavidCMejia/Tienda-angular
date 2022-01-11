@@ -15,6 +15,7 @@ import { FooterComponent } from './home/footer/footer.component';
 import { BannerComponent } from './home/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ProductsService } from './services/products.service';
 
 
 @NgModule({
@@ -38,7 +39,7 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
     RouterModule,
 
   ],
-  providers: [],
+  providers: [ProductsService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
