@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductsService } from './services/products.service';
 import { ProductDetalComponent } from './products/product-detal/product-detal.component';
+import { LayoutComponent } from './layout/layout.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { ProductDetalComponent } from './products/product-detal/product-detal.co
     FooterComponent,
     BannerComponent,
     PageNotFoundComponent,
-    ProductDetalComponent
+    ProductDetalComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
