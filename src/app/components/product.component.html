@@ -1,4 +1,4 @@
-
+<!-- ESTE ES EL PRODUCT CARD!!!!-->
 <!-- <div *ngFor="let product of products">  este array recorre y muestra automaticamente title, image y price del producto-->
   <h3>{{ product.title | uppercase}}</h3> <!-- con el |uppercase es un PIPE que pone mayus los title-->
   <div class="crop-image">
@@ -7,4 +7,5 @@
 
   <strong>{{ product.price | currency}}</strong>
   <button (click)="addCart()">Agregar al carrito</button>
+  <a [routerLink]="['/products', product.id]" >Ver detalle</a>
 
