@@ -4,37 +4,27 @@ import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { ProductComponent } from './products/product-card/product-card.component';
-import { CartComponent } from './cart/cart.component';
-//import { HomeComponent } from './home/home.component';
-import { ProductsComponent } from './products/products.component';
-import { ContactComponent } from './contact/contact.component';
-import { DemoComponent } from './demo/demo.component';
-//import { HeaderComponent } from './shared/components/header/header.component';
-//import { FooterComponent } from './shared/components/footer/footer.component';
-//import { BannerComponent } from './home/banner/banner.component';
-import { RouterModule } from '@angular/router';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-import { ProductsService } from './services/products.service';
-import { ProductDetailComponent } from './products/product-detail/product-detail.component';
 import { LayoutComponent } from './layout/layout.component';
+
+import { CartComponent } from './cart/cart.component';
+import { ContactComponent } from './contact/contact-components/contact.component';
+import { DemoComponent } from './demo/demo.component';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+
+import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductComponent,
     CartComponent,
-   // HomeComponent,
-    ProductsComponent,
+
     ContactComponent,
     DemoComponent,
-   // HeaderComponent,
-    //FooterComponent,
-    //BannerComponent,
     PageNotFoundComponent,
-    ProductDetailComponent,
     LayoutComponent
   ],
   imports: [
@@ -42,10 +32,11 @@ import { SharedModule } from './shared/shared.module';
     AppRoutingModule,
     FormsModule,
     RouterModule,
-    SharedModule
+    SharedModule,
+    BrowserAnimationsModule
 
   ],
-  providers: [ProductsService],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

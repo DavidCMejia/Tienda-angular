@@ -1,9 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import 'swiper/swiper-bundle.css';
-body{
+/*body{
   margin: 0px;
   padding:0px;
-}
+}*/
 .product-grid{
   display:grid;
   grid-template-columns: repeat(3, 1fr);
@@ -23,3 +23,6 @@ body{
   width: 100%;
   object-position: center;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
