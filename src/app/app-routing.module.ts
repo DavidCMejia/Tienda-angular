@@ -1,17 +1,9 @@
 //aqui se cuadra lo del link google.com/home
-
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-
 //import { HomeComponent } from './home/home.component';
 
-import { ContactComponent } from './contact/contact-components/contact.component';
-import { DemoComponent } from './demo/demo.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
-
 import { LayoutComponent } from './layout/layout.component';
-
-
 
 const routes: Routes = [
 
@@ -35,22 +27,19 @@ const routes: Routes = [
       },
       {
         path:'contact',
-        component: ContactComponent
+        loadChildren:() => import('./contact/contact.module').then(m => m.ContactModule)
       },
-
-
+      {
+        path:'demo',
+        loadChildren:() => import('./demo/demo.module').then(m => m.DemoModule)
+      },
     ]
   },
   {
-    path:'demo',
-    component: DemoComponent
-  },
-  {
     path:'**',
-    component: PageNotFoundComponent
+    loadChildren:() => import('./page-not-found/page-not-found.module').then(m => m.PageNotFoundModule)
 
   }
-
 
 
 ];
