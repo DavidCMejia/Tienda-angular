@@ -5,6 +5,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { RouterModule } from '@angular/router';
 
+import { MaterialModule } from '../material/material.module';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +18,8 @@ import { RouterModule } from '@angular/router';
 
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    MaterialModule
 
   ],
   exports: [
