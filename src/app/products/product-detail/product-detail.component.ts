@@ -4,12 +4,12 @@ import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/core/models/product.model';
 
 @Component({
-  selector: 'app-product-detal',
-  templateUrl: './product-detal.component.html',
-  styleUrls: ['./product-detal.component.css']
+  selector: 'app-product-detail',
+  templateUrl: './product-detail.component.html',
+  styleUrls: ['./product-detail.component.css']
 
 })
-export class ProductDetalComponent implements OnInit {
+export class ProductDetailComponent implements OnInit {
 
   product!: Product;
 

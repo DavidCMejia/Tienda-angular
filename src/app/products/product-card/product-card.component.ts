@@ -9,12 +9,12 @@ import {
   OnDestroy
 } from '@angular/core'
 
-import { Product } from '../core/models/product.model'
+import { Product } from '../../core/models/product.model'
 
 @Component ({ //se declara app-product como mini app para ahorrar codigo y luego citar en una sola linea con <app-product/>
   selector: 'app-product',
-  templateUrl:'./product.component.html',
-  styleUrls: ['./product.component.css']
+  templateUrl:'./product-card.component.html',
+  styleUrls: ['./product-card.component.css']
 
 })
 
