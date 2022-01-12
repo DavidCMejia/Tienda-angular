@@ -6,13 +6,13 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ProductComponent } from './components/product.component';
 import { CartComponent } from './cart/cart.component';
-import { HomeComponent } from './home/home.component';
+//import { HomeComponent } from './home/home.component';
 import { ProductsComponent } from './products/products.component';
 import { ContactComponent } from './contact/contact.component';
 import { DemoComponent } from './demo/demo.component';
 import { HeaderComponent } from './home/header/header.component';
 import { FooterComponent } from './home/footer/footer.component';
-import { BannerComponent } from './home/banner/banner.component';
+//import { BannerComponent } from './home/banner/banner.component';
 import { RouterModule } from '@angular/router';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ProductsService } from './services/products.service';
@@ -25,13 +25,13 @@ import { LayoutComponent } from './layout/layout.component';
     AppComponent,
     ProductComponent,
     CartComponent,
-    HomeComponent,
+   // HomeComponent,
     ProductsComponent,
     ContactComponent,
     DemoComponent,
     HeaderComponent,
     FooterComponent,
-    BannerComponent,
+    //BannerComponent,
     PageNotFoundComponent,
     ProductDetalComponent,
     LayoutComponent
