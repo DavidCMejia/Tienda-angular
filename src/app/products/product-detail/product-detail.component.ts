@@ -12,7 +12,7 @@ import { Product } from 'src/app/core/models/product.model';
 })
 export class ProductDetailComponent implements OnInit {
 
-  product!: Product;
+  product!: Product | any; //se agrega any para que coja el array x ID
 
   constructor(
     private route: ActivatedRoute,
@@ -22,10 +22,17 @@ export class ProductDetailComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: Params)=>{
-      const id = params['id'];
-      this.product = this.productsService.getProduct(id)!;
+    const id = params['id'];
+    this.fetchProduct(id);
+    });
 
-    })
+  }
+
+  fetchProduct(id:string){
+    this.productsService.getProduct(id)!
+    .subscribe(product =>{
+    this.product=product;
+    }); // se aplica la funcion getAllProducts para llamarlos
   }
 
 }

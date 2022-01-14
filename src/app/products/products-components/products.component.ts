@@ -13,10 +13,17 @@ export class ProductsComponent implements OnInit {
   constructor(private productsService: ProductsService) {} // se construye el servicio
 
   ngOnInit(): void {
-    this.products = this.productsService.getAllProducts(); // se aplica la funcion getAllProducts para llamarlos
+    this.fetchProducts();
   }
 
   clickProduct(id:number){
     console.log(id+'product')
+  }
+
+  fetchProducts(){
+    this.productsService.getAllProducts()
+    .subscribe(products =>{
+    this.products=products;
+    }); // se aplica la funcion getAllProducts para llamarlos
   }
 }
