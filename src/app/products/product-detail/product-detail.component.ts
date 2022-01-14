@@ -35,4 +35,20 @@ export class ProductDetailComponent implements OnInit {
     }); // se aplica la funcion getAllProducts para llamarlos
   }
 
+  createProduct(){
+    const newProduct: Product = {
+      id: '222',
+      title: 'nuevo desde Angular',
+      image: 'assets/images/banner-1.jpg',
+      price: 3000,
+      description: 'nuevo producto'
+
+    };
+
+    this.productsService.createProduct(newProduct)
+    .subscribe(product =>{
+    this.product=product;
+    }); // se aplica la funcion getAllProducts para llamarlos
+  }
+
 }

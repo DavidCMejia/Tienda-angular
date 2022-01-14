@@ -13,9 +13,14 @@ export class ProductsService {
   ) { }
 
   getAllProducts(){
-    return this.http.get<Product[]>(environment.url_api);
+    return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
   getProduct(id:string){
-    return this.http.get<Product>(`${environment.url_api}${id}`); // para buscar producto por ID, cambio el link por COMILLAS raras y products/${id}
+    return this.http.get<Product>(`${environment.url_api}/products/${id}`); // para buscar producto por ID, cambio el link por COMILLAS raras y products/${id}
   }
+  createProduct(product: Product){
+    return this.http.post(`${environment.url_api}/products`, product)
+  }
+
 }
+
