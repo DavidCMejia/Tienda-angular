@@ -15,11 +15,21 @@ export class ProductsService {
   getAllProducts(){
     return this.http.get<Product[]>(`${environment.url_api}/products`);
   }
-  getProduct(id:string){
+
+  getProduct(id:string){ //metodo GET
     return this.http.get<Product>(`${environment.url_api}/products/${id}`); // para buscar producto por ID, cambio el link por COMILLAS raras y products/${id}
   }
-  createProduct(product: Product){
+
+  createProduct(product: Product){ //metodo POST
     return this.http.post(`${environment.url_api}/products`, product)
+  }
+
+  updateProduct(id:string, changes: Partial<Product>){ //metodo UPDATE/PUT
+    return this.http.put(`${environment.url_api}/products/${id}`, changes);
+  }
+
+  deleteProduct(id:string){ //metodo DELETE
+    return this.http.delete(`${environment.url_api}/products/${id}`);
   }
 
 }

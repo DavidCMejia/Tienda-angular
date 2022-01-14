@@ -28,10 +28,10 @@ export class ProductDetailComponent implements OnInit {
 
   }
 
-  fetchProduct(id:string){
+  fetchProduct(id:string){ //metodo GET
     this.productsService.getProduct(id)!
     .subscribe(product =>{
-    this.product=product;
+    this.product = product;
     }); // se aplica la funcion getAllProducts para llamarlos
   }
 
@@ -47,8 +47,31 @@ export class ProductDetailComponent implements OnInit {
 
     this.productsService.createProduct(newProduct)
     .subscribe(product =>{
-    this.product=product;
+      console.log(product);
     }); // se aplica la funcion getAllProducts para llamarlos
   }
 
+updateProduct(){
+  const updateProduct: Partial<Product> = {
+
+    title: 'XDDDD',
+    price: 55555,
+    description: 'Edicion titulo y precio'
+
+  };
+
+  this.productsService.updateProduct('222',updateProduct)
+  .subscribe(product =>{
+  console.log(product);
+  });
+
+}
+
+deleteProduct(){
+  this.productsService.deleteProduct('222')
+  .subscribe(result =>{
+    console.log(result);
+  });
+
+  }
 }
