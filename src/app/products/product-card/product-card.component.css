@@ -8,9 +8,3 @@
 img {
   max-width: 100%;
 }
-.product-img {
-  height: 240px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
