@@ -9,13 +9,15 @@ import { MaterialModule } from '../material/material.module';
 import { NavComponent } from './components/nav/nav.component';
 
 import { ProductsListComponent } from './components/products-list/products-list.component';
+import { CreateProductsFormComponent } from './components/create-products-form/create-products-form.component';
 
 
 @NgModule({
   declarations: [
     ProductFormComponent,
     NavComponent,
-    ProductsListComponent
+    ProductsListComponent,
+    CreateProductsFormComponent
   ],
 
   imports: [
