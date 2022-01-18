@@ -28,6 +28,9 @@
           <mat-form-field>
             <input placeholder = "price" formControlName="price" matInput type="number">
           </mat-form-field>
+          <div *ngIf="priceField?.errors && priceField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+            <mat-error *ngIf="priceField?.hasError('required')">Este campo es requerido</mat-error>
+          </div>
         </div>
       </div>
 
@@ -41,7 +44,7 @@
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-raised-button type="submit">Guardar</button>
+        <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
 
     </mat-card-actions>
   </mat-card>

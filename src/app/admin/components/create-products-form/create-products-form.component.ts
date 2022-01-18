@@ -49,9 +49,10 @@ export class CreateProductsFormComponent implements OnInit {
       });
 
     }
-
-
   }
 
+  get priceField(){ //para sacar error si no tiene price required
+    return this.form.get('price');
+  }
 
 }

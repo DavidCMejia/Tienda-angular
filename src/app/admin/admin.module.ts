@@ -12,12 +12,14 @@ import { ProductsListComponent } from './components/products-list/products-list.
 import { CreateProductsFormComponent } from './components/create-products-form/create-products-form.component';
 
 
+
 @NgModule({
   declarations: [
     ProductFormComponent,
     NavComponent,
     ProductsListComponent,
-    CreateProductsFormComponent
+    CreateProductsFormComponent,
+
   ],
 
   imports: [

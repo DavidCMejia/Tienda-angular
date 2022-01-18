@@ -1,16 +1,39 @@
 <mat-toolbar color="primary">
   <mat-toolbar-row>
-    <div class="row between-xs middle-xs header-row"> <!--hace que el boton se pegue a la izq-->
-      <nav>
-        <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-        <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
-        <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
-      </nav>
-      <a mat-raised-button matBadge="4" matBadgeColor="warn"> <!--hace que el carrito tenga numero y en rojo-->
-        <mat-icon>shopping_cart</mat-icon>
-        Carrito
-      </a>
+    <div class="row between-xs middle-xs header-row">
+      <!--hace que el boton se pegue a la izq-->
+      <div class="col-xs-2">
+        <div class="box">
+          <nav>
+            <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+            <a mat-button routerLink="/products" routerLinkActive="active">Products</a>
+            <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
+          </nav>
+        </div>
+      </div>
+
+      <div class="col-xs-2">
+        <div class="box">
+          <nav>
+          <a mat-button routerLink="/register" routerLinkActive="active">Registrate</a>
+          <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
+          <a mat-raised-button matBadge="4" matBadgeColor="warn">
+            <!--hace que el carrito tenga numero y en rojo-->
+            <mat-icon>shopping_cart</mat-icon>
+            <!--Carrito-->
+          </a>
+        </nav>
+        </div>
+      </div>
+
+
+
     </div>
+
+
+
+
+
+
   </mat-toolbar-row>
 </mat-toolbar>
-

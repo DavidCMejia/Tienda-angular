@@ -5,6 +5,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { LayoutComponent } from './layout/layout.component';
 
+
 const routes: Routes = [
 
   {
@@ -32,6 +33,14 @@ const routes: Routes = [
       {
         path:'demo',
         loadChildren:() => import('./demo/demo.module').then(m => m.DemoModule)
+      },
+      {
+        path:'login',
+        loadChildren:() => import('./admin/login/login.module').then(m => m.LoginModule)
+      },
+      {
+        path:'register',
+        loadChildren:() => import('./admin/register/register.module').then(m => m.RegisterModule)
       },
     ]
   },
