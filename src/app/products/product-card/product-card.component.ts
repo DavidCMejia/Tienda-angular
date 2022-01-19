@@ -3,13 +3,13 @@ import {
   Input,
   Output,
   EventEmitter,
-  OnChanges,
-  SimpleChange,
-  OnInit,
-  OnDestroy
+
 } from '@angular/core'
 
 import { Product } from '../../core/models/product.model'
+
+import { CartService } from 'src/app/core/services/cart/cart.service';
+
 
 @Component ({ //se declara app-product como mini app para ahorrar codigo y luego citar en una sola linea con <app-product/>
   selector: 'app-product',
@@ -22,8 +22,16 @@ export class ProductComponent { // al poner la palabra export se puede usar en c
   @Input() product!: Product; //cuando se deja product sin el !, bota error xq no se ha inicializado al poner product! le decimos a typescript que no va a tomar null or undefined
   @Output() productClicked: EventEmitter<any> = new EventEmitter();
 
+  constructor(
+
+    private cartService: CartService
+
+  ){  }
+
   addCart() {
-    console.log('añadir al carrito');
-    this.productClicked.emit(this.product.id);
+
+    //this.productClicked.emit(this.product.id);
+    this.cartService.addCart(this.product);
+
   }
 }

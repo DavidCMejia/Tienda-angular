@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../core/models/product.model';
+import { Product } from '../../models/product.model';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment'; // se importa la VAR del Link URL
 
