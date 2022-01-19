@@ -17,7 +17,6 @@ export class CreateProductsFormComponent implements OnInit {
     private productsService:ProductsService,
     private router:Router
 
-
   ) {
     this.buildform();
   }
@@ -26,7 +25,7 @@ export class CreateProductsFormComponent implements OnInit {
 
   }
 
-  private buildform(){
+  buildform(){
     this.form = this.formBuilder.group({
     id: ['',[Validators.required]],
     title: ['',[Validators.required]],

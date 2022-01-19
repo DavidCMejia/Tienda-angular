@@ -1,4 +1,4 @@
-<form [formGroup]="form" (ngSubmit)="createProduct($event)">
+<form [formGroup]="form" (ngSubmit)="updateProduct($event)">
   <mat-card>
 
     <mat-card-header>
@@ -7,30 +7,11 @@
 
     <mat-card-content>
 
-      <div class="row">
-        <div class="col-xs">
-          <mat-form-field>
-            <input placeholder = "id" formControlName="id" matInput type="text">
-          </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row">
+           <div class="row">
         <div class="col-xs">
           <mat-form-field>
             <input placeholder = "title" formControlName="title" matInput>
           </mat-form-field>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-form-field>
-            <input placeholder = "image" formControlName="image" matInput type="text">
-          </mat-form-field>
-          <div *ngIf="priceField?.errors && priceField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
-            <mat-error *ngIf="priceField?.hasError('required')">Este campo es requerido</mat-error>
-          </div>
         </div>
       </div>
 

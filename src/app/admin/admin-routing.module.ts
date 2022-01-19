@@ -4,6 +4,7 @@ import { ProductFormComponent } from './components/product-form/product-form.com
 import { NavComponent } from './components/nav/nav.component';
 import { ProductsListComponent } from './components/products-list/products-list.component';
 import { CreateProductsFormComponent } from './components/create-products-form/create-products-form.component';
+import { EditProductsFormComponent } from './components/edit-products-form/edit-products-form.component'
 
 const routes: Routes = [
   {
@@ -21,7 +22,12 @@ const routes: Routes = [
       {
         path: 'products/create',
         component: CreateProductsFormComponent
+      },
+      {
+        path:'products/edit/:id',
+        component: EditProductsFormComponent
       }
+
     ]
   }
 
