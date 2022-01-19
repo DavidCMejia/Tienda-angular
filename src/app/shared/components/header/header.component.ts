@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, map } from 'rxjs';
 import { CartService } from 'src/app/core/services/cart/cart.service';
+
 
 
 @Component({
@@ -9,16 +11,22 @@ import { CartService } from 'src/app/core/services/cart/cart.service';
 })
 export class HeaderComponent implements OnInit {
 
-  total = 0;
+  total$ = new Observable<number>();
 
   constructor(
     private cartService: CartService
-
   )
    {
-    this.cartService.cart$.subscribe(products=>{
-    this.total = products.length;
-    })
+    ///this.cartService.cart$ MODO SIN PIPE para contar el carrito
+    ///.subscribe(products=>{
+    ///this.total = products.length;
+    ///})
+
+    this.total$ = this.cartService.cart$
+    .pipe(
+      map(products=>products.length)
+    );
+
    }
 
   ngOnInit(): void {
