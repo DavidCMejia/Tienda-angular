@@ -4,6 +4,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { RouterModule } from '@angular/router';
+import { CartPipe } from './pipes/cart.pipe';
 
 import { MaterialModule } from '../material/material.module';
 
@@ -12,7 +13,8 @@ import { MaterialModule } from '../material/material.module';
   declarations: [
     HeaderComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    CartPipe
 
   ],
 
@@ -25,7 +27,8 @@ import { MaterialModule } from '../material/material.module';
   exports: [
     HeaderComponent,
     FooterComponent,
-    CartComponent
+    CartComponent,
+    CartPipe
   ]
 })
 export class SharedModule { }

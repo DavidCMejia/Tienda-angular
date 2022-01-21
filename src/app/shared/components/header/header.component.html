@@ -17,7 +17,7 @@
           <nav>
           <a mat-button routerLink="/register" routerLinkActive="active">Registrate</a>
           <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
-          <a mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
+          <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
             <!--hace que el carrito tenga numero y en rojo-->
             <mat-icon>shopping_cart</mat-icon>
             <!--Carrito-->
