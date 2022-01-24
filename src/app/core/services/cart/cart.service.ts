@@ -19,7 +19,7 @@ export class CartService {
     this.cart.next(this.products);
   }
 
-  remove(productId: String): void {
+  remove(productId: String): void { // individual si tiene 3, se reduce a 2
     let i: number = this.products.length - 1;
     let productFound: Boolean = false;
     let aux: Product[] = [];
@@ -35,6 +35,11 @@ export class CartService {
 
     this.products = aux;
     this.cart.next(aux);
+  }
+
+  removeFromCart(productId: String) {// remueve la fila entera del product
+    this.products = this.products.filter(product => product.id !== productId);
+    this.cart.next(this.products);
   }
 
 

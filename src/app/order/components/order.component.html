@@ -1,41 +1,49 @@
 <mat-horizontal-stepper>
   <mat-step>
+
     <ng-template matStepLabel>Sus productos</ng-template>
+
     <div *ngIf="(products$ | async ) as products">
-        <p *ngIf="products.length === 0">No hay productos en el carrito</p>
+      <p *ngIf="products.length === 0">No hay productos en el carrito</p>
 
-
-        <div class="row" *ngFor="let product of (products | removeDoubleProducts)"> <!--renderiza sin duplicados-->
-
+      <mat-card>
+        <div class="row" *ngFor="let product of (products | removeDoubleProducts)">
+          <!--renderiza sin duplicados-->
           <div *ngIf="(1 | countingProducts: product:products) as count">
-          <div class="col-xs-12 col-sm-2 col-md-2">
-            <div class="box">
-              <img class="image" [src]="product.image" alt="">
-            </div>
-          </div>
+            <br>
+            <mat-card-header>
 
-          <div class="col-xs-12 col-sm-5 col-md-5">
-            <div class="box">
-              {{ product.title }}  ({{ 1 | countingProducts: product:products }}) <!-- se cuentan repetidos, default 1-->
-            </div>
-          </div>
+              <img mat-card-avatar class="image" [src]="product.image" alt="">
+              <mat-card-title>
 
-         <div class="col-xs-12 col-sm-5 col-md-5">
-            <div class="box">
-              {{ product.price }}
-            </div>
-          </div>
+                {{ product.title }} ({{ 1 | countingProducts: product:products }})</mat-card-title>
+              <!-- se cuentan repetidos, default 1-->
 
-          <div>
-            <button mat-mini-fab color="primary"class="quantity-button" (click)="addCart(product)"> + </button>
-            <button mat-mini-fab color="primary"class="quantity-button" [disabled]="count===1"
-              (click)="remove(product.id)"> - </button>
+              <mat-card-subtitle>{{ product.price * count | currency }}</mat-card-subtitle>
+            </mat-card-header>
 
+            <mat-card-content>
+              <button mat-mini-fab color="primary" class="quantity-button" (click)="addCart(product)"> + </button>
+              <button mat-mini-fab color="primary" class="quantity-button" [disabled]="count===1"
+                (click)="remove(product.id)"> - </button>
+            </mat-card-content>
+
+            <mat-card-actions>
+              <button mat-button color="primary" (click)="removeFromCart(product.id)">Eliminar</button>
+            </mat-card-actions>
           </div>
-        </div> <!--este es-->
+          <!--este es el de counting cierre-->
+          <mat-divider></mat-divider>
 
         </div>
-    </div>
+      </mat-card>
+      <div *ngIf="products.length !== 0">
+        <mat-divider></mat-divider>
+        <h2>Total: {{ totalAmount() | currency }}</h2>
+      </div>
+
+
+    </div> <!-- cierra el ngIf products async-->
 
   </mat-step>
   <mat-step>
@@ -46,4 +54,5 @@
     <ng-template matStepLabel>Pago</ng-template>
     <h1>contenifo</h1>
   </mat-step>
+
 </mat-horizontal-stepper>

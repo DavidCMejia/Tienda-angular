@@ -35,4 +35,20 @@ export class OrderComponent implements OnInit {
     this.cartService.remove(productId);
   }
 
+  removeFromCart(productId: String) {
+    this.cartService.removeFromCart(productId);
+  }
+
+  totalAmount(): number {
+    let counter: number = 0;
+
+    this.products$.subscribe((products) => {
+      products.forEach((product) => {
+        counter = counter + product.price;
+      });
+    });
+
+    return counter;
+  }
+
 }
