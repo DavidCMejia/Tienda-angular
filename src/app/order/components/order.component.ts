@@ -20,16 +20,19 @@ export class OrderComponent implements OnInit {
   ) {
 
     this.products$ = this.cartService.cart$;
-    //this.products$ = this.cartService.cart$.pipe(map((products:[]) => {
-    //  const distintos = [...new Set(products)];
-    //  return distintos;
-   // }));
-
-
 
    }
 
   ngOnInit(): void {
+  }
+
+  addCart(product: Product): void {
+    console.log('Agregar al carrito');
+    this.cartService.addCart(product);
+  }
+
+  remove(productId: String) { // individual si tiene 3, se reduce a 2
+    this.cartService.remove(productId);
   }
 
 }

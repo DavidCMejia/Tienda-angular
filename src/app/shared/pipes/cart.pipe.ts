@@ -16,7 +16,8 @@ export class CartPipe implements PipeTransform {
    * @param product Duplicate reference product.
    * @param products List of products.
    */
-  howManyTimes(product: Product, products: Product[]): number {
+  howManyTimes(
+    product: Product, products: Product[]): number {
     let counter: number = 0;
     for (let i = 0; i < products.length; i++) {
       if(product.id === products[i].id){

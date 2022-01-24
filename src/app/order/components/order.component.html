@@ -6,6 +6,8 @@
 
 
         <div class="row" *ngFor="let product of (products | removeDoubleProducts)"> <!--renderiza sin duplicados-->
+
+          <div *ngIf="(1 | countingProducts: product:products) as count">
           <div class="col-xs-12 col-sm-2 col-md-2">
             <div class="box">
               <img class="image" [src]="product.image" alt="">
@@ -23,6 +25,15 @@
               {{ product.price }}
             </div>
           </div>
+
+          <div>
+            <button mat-mini-fab color="primary"class="quantity-button" (click)="addCart(product)"> + </button>
+            <button mat-mini-fab color="primary"class="quantity-button" [disabled]="count===1"
+              (click)="remove(product.id)"> - </button>
+
+          </div>
+        </div> <!--este es-->
+
         </div>
     </div>
 
