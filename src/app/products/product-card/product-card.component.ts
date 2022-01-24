@@ -34,4 +34,5 @@ export class ProductComponent { // al poner la palabra export se puede usar en c
     this.cartService.addCart(this.product);
 
   }
+
 }

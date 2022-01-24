@@ -3,7 +3,7 @@ import { Product } from './../../core/models/product.model';
 import { CartService } from './../../core/services/cart/cart.service';
 
 
-import { Observable, map } from 'rxjs';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -13,13 +13,18 @@ import { Observable, map } from 'rxjs';
 })
 export class OrderComponent implements OnInit {
 
-   products$: Observable<Product[]> //no es necesario el products$! con el ! porque SI se uso en el constructor
+  products$: Observable<Product[]> //no es necesario el products$! con el ! porque SI se uso en el constructor
 
   constructor(
     private cartService: CartService
   ) {
 
     this.products$ = this.cartService.cart$;
+    //this.products$ = this.cartService.cart$.pipe(map((products:[]) => {
+    //  const distintos = [...new Set(products)];
+    //  return distintos;
+   // }));
+
 
 
    }

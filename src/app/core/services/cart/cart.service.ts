@@ -18,7 +18,10 @@ export class CartService {
     this.products = [...this.products, product];
     this.cart.next(this.products);
 
+
   }
+
+
 
   constructor() { }
 }

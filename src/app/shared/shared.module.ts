@@ -4,7 +4,9 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { CartComponent } from './components/cart/cart.component';
 import { RouterModule } from '@angular/router';
+
 import { CartPipe } from './pipes/cart.pipe';
+import { RemoveDoubleProductsPipe } from './pipes/remove-double-products.pipe';
 
 import { MaterialModule } from '../material/material.module';
 
@@ -14,7 +16,8 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    CartPipe
+    CartPipe,
+    RemoveDoubleProductsPipe
 
   ],
 
@@ -28,7 +31,8 @@ import { MaterialModule } from '../material/material.module';
     HeaderComponent,
     FooterComponent,
     CartComponent,
-    CartPipe
+    CartPipe,
+    RemoveDoubleProductsPipe
   ]
 })
 export class SharedModule { }
