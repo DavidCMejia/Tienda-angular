@@ -10,7 +10,13 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
-
+import { environment } from '../environments/environment';
+import { initializeApp,provideFirebaseApp } from '@angular/fire/app';
+import { provideAuth,getAuth } from '@angular/fire/auth';
+import { AuthModule } from '@angular/fire/auth';
+import { StorageModule } from '@angular/fire/storage';
+import { provideDatabase,getDatabase } from '@angular/fire/database';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 
 @NgModule({
   declarations: [
@@ -24,7 +30,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     RouterModule,
     SharedModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    AuthModule,
+    StorageModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideAuth(() => getAuth()),
+    provideDatabase(() => getDatabase()),
+    provideFirestore(() => getFirestore()),
+
 
   ],
   providers: [],

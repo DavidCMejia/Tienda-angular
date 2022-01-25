@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "tienda-angulardb": {
+      "hosting": {
+        "tienda-angular": [
+          "tienda-angulardb"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "tienda-angulardb"
+  }
+}

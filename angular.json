@@ -96,8 +96,6 @@
             ],
             "styles": [
               "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
-
-
               "src/styles.css"
             ],
             "scripts": []
@@ -110,6 +108,16 @@
               "src/**/*.ts",
               "src/**/*.html"
             ]
+          }
+        },
+        "deploy": {
+          "builder": "@angular/fire:deploy",
+          "options": {
+            "prerender": false,
+            "ssr": false,
+            "browserTarget": "tienda-angular:build:production",
+            "firebaseProject": "tienda-angulardb",
+            "firebaseHostingSite": "tienda-angulardb"
           }
         }
       }
