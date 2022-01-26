@@ -1,1 +1,58 @@
-<p>login works!</p>
+<form [formGroup]="form" ><!--(ngSubmit)="createProduct($event)"-->
+
+<mat-card>
+
+
+  <div class="main">
+    <div class="row center-xs">
+      <div class="col-xs-4">
+          <div class="box">
+
+    <mat-card-title>Iniciar sesi&oacute;n</mat-card-title>
+    <br>
+
+    <div>
+      <mat-form-field appearance="fill" class="emailField">
+        <mat-label>Enter your email</mat-label>
+        <input id="email" formControlName="email" matInput placeholder="pat@example.com"required>
+        <div *ngIf="emailField?.errors && emailField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+          <mat-error *ngIf="emailField?.hasError('required')">Este campo es requerido</mat-error>
+        </div>
+
+      </mat-form-field>
+    </div>
+
+    <div>
+      <mat-form-field appearance="fill" class="pwField">
+        <mat-label>Enter your password</mat-label>
+        <input formControlName="password" matInput [type]="hide ? 'password' : 'text'" required>
+        <div *ngIf="passwordField?.errors && passwordField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+          <mat-error *ngIf="passwordField?.hasError('required')">Este campo es requerido</mat-error>
+        </div>
+
+        <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+          [attr.aria-pressed]="hide">
+          <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        </button>
+      </mat-form-field>
+      <br>
+      <mat-label>¿No tiene una cuenta?
+        <a routerLink="/register" routerLinkActive="active">Reg&iacute;strate.</a></mat-label>
+
+    </div>
+      <br>
+        <button class ="nextbtn"mat-raised-button type="submit">Siguiente</button>
+
+  </div>
+</div>
+</div>
+
+  </div><!--cierra DIV GRAL-->
+
+
+
+
+
+</mat-card>
+
+</form>

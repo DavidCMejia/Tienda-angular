@@ -14,6 +14,8 @@ import { MatTableModule } from '@angular/material/table';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
+import { MatFormFieldModule } from '@angular/material/form-field';
+
 
 @NgModule({
   declarations: [],
@@ -31,7 +33,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule
 
   ],
   exports:[
@@ -47,7 +50,8 @@ import { MatStepperModule } from '@angular/material/stepper';
     MatSidenavModule,
     MatListModule,
     LayoutModule,
-    MatStepperModule
+    MatStepperModule,
+    MatFormFieldModule
   ]
 })
 export class MaterialModule { }
