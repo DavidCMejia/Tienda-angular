@@ -20,7 +20,7 @@ import { Auth,
   authState,
   onAuthStateChanged } from '@angular/fire/auth';
 
-  import { Observable } from 'rxjs';
+  import { Observable, take } from 'rxjs';
 
 //  import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 
@@ -63,5 +63,14 @@ export class AuthService {
     // create user in db
 
     }
+
+    hasUser()
+    {
+      return authState(this.auth);
+    }
+
+
+
+
 }
 

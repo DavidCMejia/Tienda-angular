@@ -4,6 +4,7 @@ import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 //import { HomeComponent } from './home/home.component';
 
 import { LayoutComponent } from './layout/layout.component';
+import { AdminGuard } from './core/guards/admin.guard';
 
 
 const routes: Routes = [
@@ -51,6 +52,7 @@ const routes: Routes = [
 
   {
     path:'admin',
+    canActivate: [AdminGuard],
     loadChildren:() => import('./admin/admin.module').then(m => m.AdminModule)
 
   },
