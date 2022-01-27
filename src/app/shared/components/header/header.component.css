@@ -2,9 +2,16 @@ nav > a {
   padding: 5px;
   text-decoration: none;
 }
+
+nav > a:hover {
+  color: white;
+}
+
 nav > a.active {
-  background-color: blue;
+  background-color: #3d4b9b;
  }
  .header-row{
     width:98%;
  }
+
+

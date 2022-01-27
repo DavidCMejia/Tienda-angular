@@ -16,16 +16,21 @@
               <img mat-card-avatar class="image" [src]="product.image" alt="">
               <mat-card-title>
 
-                {{ product.title }} ({{ 1 | countingProducts: product:products }})</mat-card-title>
-              <!-- se cuentan repetidos, default 1-->
+                {{ product.title }} </mat-card-title>
+
 
               <mat-card-subtitle>{{ product.price * count | currency }}</mat-card-subtitle>
             </mat-card-header>
 
             <mat-card-content>
               <button mat-mini-fab color="primary" class="quantity-button" (click)="addCart(product)"> + </button>
+
               <button mat-mini-fab color="primary" class="quantity-button" [disabled]="count===1"
                 (click)="remove(product.id)"> - </button>
+
+                <label class ="countLabel "> <strong>({{ 1 | countingProducts: product:products }})</strong></label>
+
+
             </mat-card-content>
 
             <mat-card-actions>

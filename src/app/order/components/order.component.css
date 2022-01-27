@@ -4,3 +4,8 @@
 .quantity-button{
   margin-right: 10px;
 }
+
+.countLabel{
+  vertical-align: middle;
+  font-size:30px;
+}

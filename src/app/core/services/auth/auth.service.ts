@@ -22,6 +22,8 @@ import { Auth,
 
   import { Observable } from 'rxjs';
 
+//  import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+
 @Injectable({
   providedIn: 'root'
 })
@@ -34,8 +36,19 @@ export class AuthService {
     this.user$ = user(auth);
     }
 
+  async login(email: string, password: string):
+    Promise<any> {
+      return await signInWithEmailAndPassword(this.auth, email, password);
+  }
+
+ async logout():
+ Promise<any>{
+  return signOut(this.auth);
+}
+
+
   async createUser(email:string, password:string):
-   Promise<void> {
+  Promise<void> {
 
     const credential = await createUserWithEmailAndPassword(
       this.auth,
@@ -51,3 +64,4 @@ export class AuthService {
 
     }
 }
+
