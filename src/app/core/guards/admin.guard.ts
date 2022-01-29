@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree } from '@angular/router';
-import { Observable, map } from 'rxjs';
+import { ActivatedRouteSnapshot, CanActivate, RouterStateSnapshot, UrlTree, Router } from '@angular/router';
+import { Observable, map, tap } from 'rxjs';
 
 import { AuthService } from '../services/auth/auth.service';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +12,8 @@ import { AuthService } from '../services/auth/auth.service';
 export class AdminGuard implements CanActivate{
 
   constructor(
-    private authService: AuthService
+    private authService: AuthService,
+    private router: Router
   ){}
 
   canActivate(
@@ -18,7 +21,16 @@ export class AdminGuard implements CanActivate{
     state: RouterStateSnapshot): Observable<boolean | UrlTree> | Promise<boolean | UrlTree> | boolean | UrlTree {
     return this.authService.hasUser()
     .pipe(
-      map(user => user=== null ? false : true) //esta diciendo que si No esta logeado/null entonces NO sigue, solo sigue si se logea
-    ); //queda PROHIBIDO sin logearse con FALSE
+      map(user => user=== null ? false : true), //esta diciendo que si No esta logeado/null entonces NO sigue, solo sigue si se logea
+      //queda PROHIBIDO sin logearse con FALSE
+      tap(hasUser=>{
+        if (!hasUser){
+          this.router.navigate(['/login']); //si NO hay logeo e intenta ir a ADMIN se va para Login
+        }
+      }),
+    );
+
+    }
+
   }
-}
+

@@ -15,6 +15,8 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
 import { MatStepperModule } from '@angular/material/stepper';
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatProgressBarModule } from '@angular/material/progress-bar';
+
 
 
 @NgModule({
@@ -34,7 +36,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     LayoutModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressBarModule
 
   ],
   exports:[
@@ -51,7 +54,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
     MatListModule,
     LayoutModule,
     MatStepperModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    MatProgressBarModule
   ]
 })
 export class MaterialModule { }

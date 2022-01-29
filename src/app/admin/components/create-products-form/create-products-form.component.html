@@ -23,16 +23,6 @@
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs">
-          <mat-form-field>
-            <input placeholder = "image" formControlName="image" matInput type="text">
-          </mat-form-field>
-          <div *ngIf="priceField?.errors && priceField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
-            <mat-error *ngIf="priceField?.hasError('required')">Este campo es requerido</mat-error>
-          </div>
-        </div>
-      </div>
 
       <div class="row">
         <div class="col-xs">
@@ -52,6 +42,21 @@
           </mat-form-field>
         </div>
       </div>
+
+      <div class="row">
+        <div class="col-xs">
+          <!--Barra de progreso-->
+          <p id="barraProgreso"></p>
+          <mat-progress-bar id="progressBar" mode="determinate" value="progress"></mat-progress-bar>
+
+          <!--URL en la base de datos para luego subir al ARR de products-->
+          <textarea hidden  placeholder = "image" id="image" formControlName="image">VACIO</textarea>
+            <!--ARCHIVO de la imagen que se va subir-->
+           Imagen: <input type="file" placeholder = "imageFile" (change)="uploadFile($event)"  alt ="Seleccionar Imagen" >
+
+        </div>
+      </div>
+
     </mat-card-content>
 
     <mat-card-actions>
@@ -60,3 +65,5 @@
     </mat-card-actions>
   </mat-card>
 </form>
+
+
