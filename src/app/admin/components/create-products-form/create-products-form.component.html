@@ -2,68 +2,81 @@
   <mat-card>
 
     <mat-card-header>
-      <mat-card-title>Product</mat-card-title>
+      <mat-card-title>Nuevo producto</mat-card-title>
     </mat-card-header>
 
     <mat-card-content>
 
-      <div class="row">
-        <div class="col-xs">
+      <div class="row start-xs">
+        <div class="col-xs-6">
           <mat-form-field>
-            <input placeholder = "id" formControlName="id" matInput type="text">
+            <input placeholder="id" formControlName="id" matInput type="number">
+          </mat-form-field>
+          <div *ngIf="idField?.errors && idField?.dirty">
+            <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+            <mat-error *ngIf="idField?.hasError('required')">Este campo es requerido</mat-error>
+          </div>
+        </div>
+      </div>
+
+      <div class="row start-xs">
+        <div class="col-xs-6">
+          <mat-form-field>
+            <input placeholder="T&iacute;tulo" formControlName="title" matInput type="text">
+            <div *ngIf="titleField?.errors && titleField?.dirty">
+              <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+              <mat-error *ngIf="titleField?.hasError('required')">Este campo es requerido</mat-error>
+            </div>
           </mat-form-field>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs">
+      <div class="row start-xs">
+        <div class="col-xs-6">
           <mat-form-field>
-            <input placeholder = "title" formControlName="title" matInput>
+            <input placeholder="Precio" formControlName="price" matInput type="number">
           </mat-form-field>
-        </div>
-      </div>
-
-
-      <div class="row">
-        <div class="col-xs">
-          <mat-form-field>
-            <input placeholder = "price" formControlName="price" matInput type="number">
-          </mat-form-field>
-          <div *ngIf="priceField?.errors && priceField?.dirty"> <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+          <div *ngIf="priceField?.errors && priceField?.dirty">
             <mat-error *ngIf="priceField?.hasError('required')">Este campo es requerido</mat-error>
           </div>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs">
+      <div class="row start-xs">
+        <div class="col-xs-6">
           <mat-form-field>
-            <textarea  placeholder = "description" formControlName="description" matInput></textarea>
+            <textarea placeholder="Descripci&oacute;n" formControlName="description" matInput type="text"></textarea>
           </mat-form-field>
         </div>
       </div>
 
-      <div class="row">
-        <div class="col-xs">
-          <!--Barra de progreso-->
-          <p id="barraProgreso"></p>
-          <mat-progress-bar id="progressBar" mode="determinate" value="progress"></mat-progress-bar>
+      <div class="row start-xs">
+        <div class="col-xs-6">
+          <div id="barId" [hidden]="true">
+            <mat-progress-bar class="progressBar" mode="determinate" [value]="progressbarValue"></mat-progress-bar>
+            <br>
+          </div>
 
-          <!--URL en la base de datos para luego subir al ARR de products-->
-          <textarea hidden  placeholder = "image" id="image" formControlName="image">VACIO</textarea>
-            <!--ARCHIVO de la imagen que se va subir-->
-           Imagen: <input type="file" placeholder = "imageFile" (change)="uploadFile($event)"  alt ="Seleccionar Imagen" >
+          <!--URL de la Imagen en la base de datos para luego subir al ARR de products -->
+          <textarea hidden placeholder="Imagen" id="image" formControlName="image"></textarea>
+          <!--ARCHIVO de la imagen que se va subir-->
+          <mat-card-subtitle>Im&aacute;gen *</mat-card-subtitle>
+          <input type="file" placeholder="imageFile" (change)="uploadFile($event);showBar()" alt="Seleccionar Imagen">
 
         </div>
       </div>
 
+
     </mat-card-content>
 
     <mat-card-actions>
-        <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+      <div class="row start-xs">
+        <div class="col-xs-6">
+          <button [disabled]="form.invalid" mat-raised-button type="submit">Guardar</button>
+
+        </div>
+      </div>
 
     </mat-card-actions>
   </mat-card>
 </form>
-
-

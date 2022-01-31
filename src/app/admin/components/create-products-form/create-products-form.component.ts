@@ -6,11 +6,7 @@ import { Observable } from 'rxjs';
 
 import { Storage,
         ref,
-        deleteObject,
-        uploadBytes,
-        uploadString,
         uploadBytesResumable,
-        percentage,
         getDownloadURL } from '@angular/fire/storage';
 
 @Component({
@@ -20,10 +16,8 @@ import { Storage,
 })
 export class CreateProductsFormComponent implements OnInit {
 
-
   form!: FormGroup;
-  uploadPercent!: Observable<number>;
-
+  progressbarValue = 0;
 
   constructor(
     private formBuilder: FormBuilder,
@@ -52,8 +46,9 @@ export class CreateProductsFormComponent implements OnInit {
       // Observe state change events such as progress, pause, and resume
       // Get task progress, including the number of bytes uploaded and the total number of bytes to be uploaded
       const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-      this.form.get('progressBar')?.setValue(progress);
-      document.getElementById("barraProgreso")!.innerHTML= 'Upload is ' + progress + '% done';
+      this.progressbarValue = progress; //se le asigna el valor de progress en tiempo REAL a la variable this.progressbarValue en OnInit
+
+     // document.getElementById("barraProgreso")!.innerHTML= 'Upload is ' + progress + '% done';
       console.log('Upload is ' + progress + '% done');
       switch (snapshot.state) {
         case 'paused':
@@ -61,6 +56,7 @@ export class CreateProductsFormComponent implements OnInit {
           break;
         case 'running':
           console.log('Upload is running');
+
           break;
       }
     },
@@ -106,8 +102,20 @@ export class CreateProductsFormComponent implements OnInit {
     }
   }
 
+  get idField(){ //para sacar error si no tiene price required
+    return this.form.get('id');
+  }
+  get titleField(){ //para sacar error si no tiene price required
+    return this.form.get('title');
+  }
+
   get priceField(){ //para sacar error si no tiene price required
     return this.form.get('price');
+  }
+
+  showBar(){
+    var x = document.getElementById("barId");
+    x!.style.display = "block"
   }
 
 }
