@@ -13,14 +13,16 @@
             <div>
               <mat-form-field appearance="fill" class="emailField">
                 <mat-label>Enter your email</mat-label>
-                <input id="email" formControlName="email" matInput placeholder="pat@example.com" required>
-                <div *ngIf="emailField?.errors && emailField?.dirty">  <!--Literalmente dice espere a que el User escriba y SINO saque error-->
-                  <mat-error *ngIf="emailField?.hasError('required')">Este campo es requerido</mat-error>
-                </div>
-
+                <input id="email" formControlName="email" matInput placeholder="pat@example.com" [pattern]="emailPattern" required>
               </mat-form-field>
-            </div>
 
+              <div *ngIf="emailField?.errors && emailField?.dirty && emailField?.touched">  <!--Literalmente dice espere a que el User escriba y SINO saque error-->
+                <mat-error *ngIf="emailField?.hasError('pattern')">Digite un email valido</mat-error>
+                <mat-error *ngIf="emailField?.hasError('required')">Este campo es requerido</mat-error>
+
+              </div>
+            </div>
+            <br>
             <div>
               <mat-form-field appearance="fill" class="pwField">
                 <mat-label>Enter your password</mat-label>

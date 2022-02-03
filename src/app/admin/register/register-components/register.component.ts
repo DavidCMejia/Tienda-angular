@@ -15,6 +15,7 @@ import {AuthService} from './../../../core/services/auth/auth.service'
 export class RegisterComponent implements OnInit {
   hide = true;
   form!: FormGroup;
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
 
 
   constructor(
@@ -51,7 +52,7 @@ export class RegisterComponent implements OnInit {
 
   buildform(){
     this.form = this.formBuilder.group({
-    email: ['',[Validators.required, Validators.email]],
+    email: ['',[Validators.required, Validators.pattern(this.emailPattern)]],
     password: ['',[Validators.required,Validators.minLength(6)]],
     });
   }

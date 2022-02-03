@@ -1,0 +1,19 @@
+.contactform{
+  text-align: left;
+}
+h2{
+  text-align: center;
+}
+.box{
+
+  /*border: 1px solid black;*/
+  border-radius: 10%;
+  padding: 30px;
+  background: rgba(63, 81, 181,.1);
+
+}
+
+button {
+  display: block;
+  margin: auto;
+}

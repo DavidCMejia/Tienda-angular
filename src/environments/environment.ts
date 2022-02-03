@@ -13,8 +13,8 @@ export const environment = {
     messagingSenderId: '126285773659',
   },
   production: false,
+  //url_api: 'https://my-json-server.typicode.com/DavidCMejia/productslist',// link bonito para mostrar
   url_api: 'https://platzi-store.herokuapp.com',
-
 };
 
 /*

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormGroup, FormBuilder, Validators} from '@angular/forms';
+import {FormGroup, FormBuilder, Validators, FormGroupDirective, NgForm, FormControl} from '@angular/forms';
 import { Router } from '@angular/router';
+import { ErrorStateMatcher } from '@angular/material/core';
 
 import {AuthService} from './../../../core/services/auth/auth.service'
 
@@ -12,6 +13,8 @@ import {AuthService} from './../../../core/services/auth/auth.service'
 export class LoginComponent implements OnInit {
   hide = true;
   form!: FormGroup;
+  emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -19,7 +22,9 @@ export class LoginComponent implements OnInit {
     private authService: AuthService
   ) {
     this.buildform();
+
   }
+
 
   ngOnInit(): void {
   }
@@ -46,7 +51,7 @@ export class LoginComponent implements OnInit {
 
   buildform(){
     this.form = this.formBuilder.group({
-    email: ['',[Validators.required, Validators.email]],
+    email: ['',[Validators.required, Validators.pattern(this.emailPattern)]],
     password: ['',[Validators.required]],
     });
   }
@@ -59,5 +64,5 @@ export class LoginComponent implements OnInit {
   }
 
 
-
 }
+
