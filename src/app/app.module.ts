@@ -8,7 +8,9 @@ import { LayoutComponent } from './layout/layout.component';
 
 import { RouterModule } from '@angular/router';
 import { SharedModule } from './shared/shared.module';
+import { MaterialModule } from './material/material.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 import { environment } from '../environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
@@ -28,6 +30,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     AppRoutingModule,
     RouterModule,
     SharedModule,
+    MaterialModule,
+    FlexLayoutModule,
     BrowserAnimationsModule,
     HttpClientModule,
     AuthModule,

@@ -21,3 +21,12 @@
   margin: auto;
 
 }
+
+
+@media (min-width: 450px) {
+  .col-xs {
+    max-width: 40%;
+  }
+}
+
+

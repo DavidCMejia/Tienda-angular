@@ -7,7 +7,8 @@
 }*/
 .product-grid{
   display:grid;
-  grid-template-columns: repeat(3, 1fr);
+  /*grid-template-columns: repeat(3, 1fr);*/
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   grid-gap: 50px 20px;
   margin: 0px 20px 0px 20px; /* up right down left*/
 }
