@@ -32,8 +32,13 @@ export class HeaderComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public onToggleSidenav = () => {
-
+  responsiveMenu() {
+    var x = document.getElementById("myTopnav");
+    if (x!.className === "topnav") {
+      x!.className += " responsive";
+    } else {
+      x!.className = "topnav";
+    }
   }
 
 }

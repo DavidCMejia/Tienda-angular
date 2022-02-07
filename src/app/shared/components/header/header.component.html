@@ -1,39 +1,27 @@
-<mat-toolbar color="primary">
-  <mat-toolbar-row>
-    <div class="row between-xs middle-xs header-row">
-      <!--hace que el boton se pegue a la izq-->
-      <div class="col-xs-2">
-        <div class="box">
-          <nav>
-            <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
-            <a mat-button href="/products" routerLinkActive="active" >Products</a>
-            <a mat-button routerLink="/contact" routerLinkActive="active">Contact</a>
-          </nav>
-        </div>
-      </div>
-
-      <div class="col-xs-2">
-        <div class="box">
-          <nav>
-          <a mat-button routerLink="/register" routerLinkActive="active">Registrate</a>
-          <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
-          <a routerLink="/order" mat-raised-button [matBadge]="total$ | async" matBadgeColor="warn">
-            <!--hace que el carrito tenga numero y en rojo-->
-            <mat-icon>shopping_cart</mat-icon>
-            <!--Carrito-->
-          </a>
-        </nav>
-        </div>
-      </div>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 
 
+<div class="topnav" id="myTopnav">
+  <a mat-button href="javascript:void(0);" style="font-size:15px;" class="icon" (click)="responsiveMenu()">&#9776;</a>
+  <a mat-button routerLink="/home" routerLinkActive="active">Home</a>
+  <div class="cart">
 
-    </div>
+    <a class="cartbtn" mat-raised-button routerLink="/order" [matBadge]="total$ | async" matBadgeColor="warn">
+      <!--hace que el carrito tenga numero y en rojo-->
+      <mat-icon>shopping_cart</mat-icon>
+      <!--Carrito-->
+    </a>
 
+  </div>
+  <a mat-button routerLink="/products" routerLinkActive="active">Productos</a>
+  <a mat-button routerLink="/contact" routerLinkActive="active">Cont&aacute;ctanos</a>
+  <a mat-button routerLink="/register" routerLinkActive="active">Reg&iacute;strate</a>
+  <a mat-button routerLink="/login" routerLinkActive="active">Login</a>
 
+</div>
 
+<div>
 
-
-
-  </mat-toolbar-row>
-</mat-toolbar>
+</div>
