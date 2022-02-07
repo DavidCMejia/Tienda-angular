@@ -11,6 +11,7 @@
 .cartbtn{
   float: right;
   color:black !important;
+  z-index: 5;
 }
 
 .topnav a {
