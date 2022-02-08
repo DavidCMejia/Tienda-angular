@@ -1,7 +1,7 @@
 <!-- ESTE ES EL PRODUCT CARD!!!!-->
 <!-- <div *ngFor="let product of products">  este array recorre y muestra automaticamente title, image y price del producto-->
 
-<mat-card >
+<mat-card>
   <mat-card-header>
     <mat-card-title> {{ product.title | uppercase}} </mat-card-title>  <!-- con el |uppercase es un PIPE que pone mayus los title-->
     <mat-card-subtitle> {{ product.price | currency}} </mat-card-subtitle>
@@ -14,6 +14,11 @@
 </mat-card-content>
 <mat-card-actions>
   <a mat-raised-button [routerLink]="['/products', product.id]" >Ver detalle</a>
-  <button (click)="addCart()" mat-raised-button color="primary">Agregar al carrito</button>
+  <button (click)="addCart();AddedtoCart()" mat-raised-button color="primary">Agregar al carrito</button>
 </mat-card-actions>
 </mat-card>
+
+<ngb-alert #selfClosingAlert *ngIf="successMessage" type="success" (closed)="successMessage = ''">
+  {{ successMessage }}
+</ngb-alert>
+

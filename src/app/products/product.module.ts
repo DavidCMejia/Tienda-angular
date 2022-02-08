@@ -10,6 +10,7 @@ import { ProductComponent } from "./product-card/product-card.component";
 import { ProductRoutingModule } from "./product-routing.module";
 import { SharedModule } from "../shared/shared.module";
 import { MaterialModule } from "../material/material.module"; //para usar diseños de angular
+import { NgbAlertModule } from "@ng-bootstrap/ng-bootstrap";
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { MaterialModule } from "../material/material.module"; //para usar diseñ
     CommonModule,
     ProductRoutingModule,
     SharedModule,
-    MaterialModule
+    MaterialModule,
+    NgbAlertModule
 
   ],
   providers: [ProductsService]

@@ -17,6 +17,7 @@ export class CartService {
   addCart (product: Product){
     this.products = [...this.products, product];
     this.cart.next(this.products);
+
   }
 
   remove(productId: String): void { // individual si tiene 3, se reduce a 2

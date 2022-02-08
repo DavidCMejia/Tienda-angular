@@ -18,6 +18,8 @@ import { AuthModule, provideAuth,getAuth } from '@angular/fire/auth';
 import { StorageModule } from '@angular/fire/storage';
 import { provideDatabase, getDatabase } from '@angular/fire/database';
 import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
     provideAuth(() => getAuth()),
     provideDatabase(() => getDatabase()),
     provideFirestore(() => getFirestore()),
+    NgbModule,
+
 
 
   ],
